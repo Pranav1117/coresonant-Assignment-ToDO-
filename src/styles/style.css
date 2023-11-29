@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+header{
+    background:#1c1c1c;
+    height: 4rem;
+}
+
+.heading{
+    color: black;
+    font-size: clamp(30px,4vw,54px);
+    text-align: center;
+}
+.hr{
+    border: 1px solid rgb(106, 106, 106);
+    width: 61%;
+    margin-inline: auto;
+}
+
+h1{
+    height: 100%;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+}
+
+.main{
+    background-color: #EEF0F2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    min-height: 100vh;
+}
+.main.blur-back{
+    filter: blur(2px);
+}
+
+.new-task-wrapper{
+  
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-inline: auto;
+    justify-content: space-between;
+}
+
+.new-task-input{
+    width: 85%;
+    border:2px solid rgb(116, 116, 116);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.new-task-input::placeholder{
+    font-size: 1.3rem;
+    padding-left: 1rem;
+}
+
+.new-task-input:focus{
+    outline: none;
+}
+
+.new-task-btn{
+    border: 1px solid #595959;
+    padding: 0.9rem;
+    border-radius:5px ;
+    color: white;
+    background-color: #595959;
+    cursor: pointer;
+}
+
+.new-task-btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: transparent;
+    color: #595959;
+    border: 1px solid #595959;
+}
+
+.list-wrapper{
+    background-color: #fafaff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-inline: auto;
+    border-radius: 10px;
+    padding: 0.3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.list-wrapper.line{
+    text-decoration: line-through;
+}
+
+.toggle{
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    margin-inline:auto;
+    
+}
+
+.toggle button{
+    background-color: #595959;
+    padding: 0.5rem;
+    border: 1px solid #595959;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle button:hover{
+    background-color: transparent;
+    color: black;
+}
+.list-wrapper.mark-done {
+    text-decoration: line-through;
+}
+
+.list-wrapper p{
+    width: 65%;
+    color: black;
+}
+
+.list-wrapper .btn-wrapper{
+    width: 25%;
+}
+
+.btn-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-wrapper button {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-wrapper button img{
+    width: 100%;
+    mix-blend-mode: darken;
+    cursor: pointer;
+    height: 2rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.btn-wrapper button img:hover{
+    transform: scale(1.1);
+}
+.edit-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    /* z-index: 2; */
+    width: 20rem;
+    padding: 1rem;
+    display: flex;
+    /* gap: 1rem; */
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.edit-modal-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.edit-hr{
+    border:1px solid black ;
+}
+
+.edit-input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.close-edit{
+    cursor: pointer;
+    font-size: 2.5rem;
+    transform: rotate(45deg);
+    color: gray;
+}
+
+.edit-input-wrapper input{
+    padding: 0.5rem ;
+    border-radius: 5px;
+}
+
+.edit-input-wrapper button{
+    padding: 0.5rem ;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #595959;
+    width: 35%;
+    margin-inline:auto;
+    color: white;
+    border: 1px solid #595959;
+
+}
+
+.edit-input-wrapper button:hover{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #595959;
+}
+
+@media only screen and (min-width:250px) and (max-width:750px){
+    .main{
+        gap:1rem;
+    }
+
+    .new-task-wrapper{
+        width: 90%;
+    }
+    .hr{
+        width: 90%;
+    }
+
+    .new-task-btn{
+        padding: 0.3rem;
+        font-size: 1.3rem;
+    }
+
+    .toggle{
+        justify-content: center;
+    }
+    .list-wrapper{
+        width: 90%;
+    }
+}
